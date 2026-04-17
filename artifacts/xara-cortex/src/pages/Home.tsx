@@ -68,9 +68,9 @@ export default function Home() {
   }, []);
 
   const navLinks = [
-    { name: "Home", target: "hero" },
     { name: "About", target: "about" },
     { name: "Platforms", target: "platforms" },
+    { name: "What We Do", target: "what-we-do" },
     { name: "Contact", target: "contact" }
   ];
 
@@ -195,6 +195,13 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-4xl"
           >
+            <motion.p
+              variants={fadeUp}
+              className="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-[#1344D3] mb-6"
+            >
+              XARA CORTEX HOLDINGS INC.
+            </motion.p>
+
             <motion.h1 
               variants={fadeUp}
               className="text-5xl md:text-7xl font-bold tracking-tight text-primary leading-[1.1] mb-6"
@@ -206,14 +213,14 @@ export default function Home() {
               variants={fadeUp}
               className="text-xl md:text-2xl text-muted-foreground font-medium mb-4 max-w-3xl leading-relaxed"
             >
-              XARA CORTEX HOLDINGS INC. is a technology holding company building and owning advanced platforms in AI, geospatial infrastructure, market intelligence, and digital trust.
+              XARA CORTEX HOLDINGS INC. is a technology holding company that builds, owns, and stewards advanced platforms across AI, geospatial infrastructure, market intelligence, and digital trust.
             </motion.p>
             
             <motion.p 
               variants={fadeUp}
               className="text-lg text-muted-foreground/80 mb-10 max-w-3xl leading-relaxed"
             >
-              We develop, protect, and scale proprietary systems designed to power trusted decisions, reliable execution, and long-term strategic value across modern digital markets.
+              We develop proprietary systems designed to enable trusted decisions, reliable execution, and long-term strategic value in modern digital markets.
             </motion.p>
             
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
@@ -225,7 +232,7 @@ export default function Home() {
                   smoothScroll(event, "platforms");
                 }}
               >
-                Explore Our Platforms
+                Explore Platforms
               </Button>
               <Button 
                 size="lg" 
@@ -254,8 +261,9 @@ export default function Home() {
                 viewport={{ once: true, margin: "-100px" }}
                 variants={fadeUp}
               >
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">About Us</h2>
-                <div className="w-12 h-1 bg-primary mb-8 rounded-full"></div>
+                <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#1344D3] mb-4">About</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 leading-tight">A Holding Company Focused on Foundational Digital Infrastructure</h2>
+                <div className="w-12 h-1 bg-[#1344D3] mb-8 rounded-full"></div>
               </motion.div>
             </div>
             
@@ -268,10 +276,10 @@ export default function Home() {
                 className="space-y-6 text-lg text-muted-foreground leading-relaxed"
               >
                 <motion.p variants={fadeUp}>
-                  XARA CORTEX HOLDINGS INC. is a parent technology holding company focused on building and owning foundational digital infrastructure businesses. Our portfolio is centered on high-value systems in artificial intelligence, spatial intelligence, market intelligence, and digital trust.
+                  XARA CORTEX HOLDINGS INC. is a parent technology holding company focused on building and owning foundational digital infrastructure businesses. Our portfolio is centered on high-value platforms in artificial intelligence, spatial intelligence, market intelligence, and digital trust.
                 </motion.p>
                 <motion.p variants={fadeUp}>
-                  We exist to provide strategic direction, intellectual property stewardship, and long-term capital alignment across the group. By combining strong ownership with focused platform development, we aim to create durable businesses that serve as core infrastructure for the future.
+                  We provide strategic direction, intellectual property stewardship, and long-term capital alignment across the group. By combining strong ownership with disciplined platform development, we aim to build durable businesses that can become core infrastructure for the future.
                 </motion.p>
                 <motion.p variants={fadeUp} className="font-medium text-primary">
                   We are not simply building software products. We are building platforms designed to become trusted operating layers for intelligence, verification, and execution in a changing world.
@@ -371,17 +379,17 @@ export default function Home() {
               {
                 title: "Intelligence",
                 icon: BrainCircuit,
-                desc: "We believe better systems begin with better reasoning, better data, and better decision support."
+                desc: "Better systems begin with better reasoning, better data, and stronger decision support."
               },
               {
                 title: "Infrastructure",
                 icon: Layers,
-                desc: "We focus on building durable platforms that can serve as foundational layers across industries and markets."
+                desc: "We build durable platforms designed to serve as foundational layers across industries and markets."
               },
               {
                 title: "Trust",
                 icon: Fingerprint,
-                desc: "We believe trust must be designed into systems through verification, structure, and disciplined execution."
+                desc: "We believe trust must be engineered into systems through verification, structure, and disciplined execution."
               },
               {
                 title: "Long-Term Value",
@@ -432,7 +440,8 @@ export default function Home() {
                 variants={fadeUp}
                 className="sticky top-32"
               >
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Platforms</h2>
+                <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/70 mb-4">Platforms</p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">A Portfolio Built for the Next Infrastructure Layer</h2>
                 <div className="w-12 h-1 bg-white/30 mb-8 rounded-full"></div>
                 <p className="text-lg text-white/80 leading-relaxed mb-8">
                   Our portfolio reflects a clear view of the future: the world will increasingly depend on systems that make decisions more intelligent, location data more reliable, markets more understandable, and trust more verifiable.
@@ -451,12 +460,12 @@ export default function Home() {
                   {
                     title: "Xara Geospatial Engine",
                     icon: Map,
-                    desc: "Spatial intelligence and location-truth infrastructure providing reliable geographic and geospatial foundations."
+                    desc: "Spatial intelligence and location-truth infrastructure providing reliable geographic foundations for modern systems."
                   },
                   {
                     title: "MacroLens",
                     icon: BarChart4,
-                    desc: "A macro, corridor, and market intelligence platform built to support structured insights and better decision-making."
+                    desc: "A macro, corridor, and market intelligence platform built to support structured insight and better decision-making."
                   },
                   {
                     title: "SoliDeo",
@@ -500,7 +509,7 @@ export default function Home() {
       </section>
 
       {/* What We Do Section */}
-      <section className="py-24 md:py-32 bg-secondary/30">
+      <section id="what-we-do" className="py-24 md:py-32 bg-secondary/30">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
             initial="hidden"
@@ -509,10 +518,11 @@ export default function Home() {
             variants={fadeUp}
             className="mb-12 text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">What We Do</h2>
-            <div className="w-12 h-1 bg-primary mx-auto rounded-full mb-8"></div>
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#1344D3] mb-4">What We Do</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 leading-tight">Ownership, Stewardship, and Strategic Direction</h2>
+            <div className="w-12 h-1 bg-[#1344D3] mx-auto rounded-full mb-8"></div>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              As the parent company, XARA CORTEX HOLDINGS INC. provides the structure and stewardship required to build durable platform businesses.
+              As the parent company, XARA CORTEX HOLDINGS INC. provides the ownership, structure, and stewardship required to build durable platform businesses.
             </p>
           </motion.div>
 
@@ -526,17 +536,17 @@ export default function Home() {
               {
                 title: "Strategic Direction",
                 icon: Lightbulb,
-                desc: "We guide the long-term positioning and growth of the portfolio."
+                desc: "We guide the long-term positioning, development, and growth of the portfolio."
               },
               {
                 title: "Capital Stewardship",
                 icon: Landmark,
-                desc: "We align investment, growth priorities, and expansion opportunities across the group."
+                desc: "We align investment priorities, expansion opportunities, and long-term value creation across the group."
               },
               {
                 title: "Commercial Support",
                 icon: Briefcase,
-                desc: "We help create the structure required for scaling platforms into durable businesses."
+                desc: "We help create the structure required to scale platforms into durable, high-value businesses."
               }
             ].map((role, i) => (
               <motion.div
@@ -578,10 +588,13 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
             >
-              <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-primary mb-8">
+              <motion.p variants={fadeUp} className="text-xs font-semibold tracking-[0.2em] uppercase text-[#1344D3] mb-4">
                 Why It Matters
+              </motion.p>
+              <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-primary mb-8 leading-tight">
+                Trusted Infrastructure Will Define the Next Era
               </motion.h2>
-              <motion.div variants={fadeUp} className="w-12 h-1 bg-primary mx-auto rounded-full mb-12"></motion.div>
+              <motion.div variants={fadeUp} className="w-12 h-1 bg-[#1344D3] mx-auto rounded-full mb-12"></motion.div>
               
               <div className="space-y-8 text-xl md:text-2xl font-medium text-primary/80 leading-relaxed">
                 <motion.p variants={fadeUp}>
@@ -606,10 +619,13 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
             >
-              <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                Contact Us
+              <motion.p variants={fadeUp} className="text-xs font-semibold tracking-[0.2em] uppercase text-[#1344D3] mb-4">
+                Contact
+              </motion.p>
+              <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-primary mb-6 leading-tight">
+                Let's Start the Conversation
               </motion.h2>
-              <motion.div variants={fadeUp} className="w-12 h-1 bg-primary rounded-full mb-8"></motion.div>
+              <motion.div variants={fadeUp} className="w-12 h-1 bg-[#1344D3] rounded-full mb-8"></motion.div>
               <motion.p variants={fadeUp} className="text-lg text-muted-foreground leading-relaxed mb-8">
                 To learn more about XARA CORTEX HOLDINGS INC., our platforms, or strategic partnership opportunities, please get in touch.
               </motion.p>
