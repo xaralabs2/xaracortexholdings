@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "XARA CORTEX HOLDINGS INC."
+version = "1.0.0"
+id = "artifacts/xara-cortex"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19876
+
+[services.development]
+run = "pnpm --filter @workspace/xara-cortex run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/xara-cortex", "run", "build" ]
+publicDir = "artifacts/xara-cortex/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19876"
+BASE_PATH = "/"

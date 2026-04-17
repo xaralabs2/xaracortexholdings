@@ -1,0 +1,14 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "RyOWUPqPKTxmeaaHEUZXZ"
+uri = "file://artifacts/xara-cortex/public/images/hero-bg.png"
+type = "image"
+title = "Hero geometric background"
+
+[[generated]]
+id = "pJ9MaVJtU1WaHEEnlNF-6"
+uri = "file://artifacts/xara-cortex/public/images/platforms-bg.png"
+type = "image"
+title = "Platforms network background"
