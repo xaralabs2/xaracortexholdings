@@ -88,29 +88,29 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-white">
       {/* Navigation */}
       <header 
-        className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           isScrolled 
-            ? "bg-white/90 backdrop-blur-md border-border shadow-sm py-4" 
-            : "bg-transparent border-transparent py-6"
+            ? "bg-white/85 backdrop-blur-xl border-b border-border/70 py-3" 
+            : "bg-transparent border-b border-transparent py-5"
         }`}
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           <a 
             href="#hero" 
             onClick={(e) => smoothScroll(e, "hero")}
-            className="font-semibold text-[18px] uppercase text-[#1344D3] flex items-center gap-2.5"
-            style={{ letterSpacing: "0.02em" }}
+            className="font-display font-semibold text-[15px] uppercase text-primary flex items-center gap-3"
+            style={{ letterSpacing: "0.14em" }}
           >
             <span
               aria-hidden
-              className="inline-block w-[18px] h-[18px] border-[4px] border-[#1344D3] bg-transparent box-border"
+              className="inline-block w-[14px] h-[14px] border-[2px] border-[#1344D3] bg-transparent box-border rotate-45"
             />
             XARA CORTEX
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            <ul className="flex items-center gap-8 text-sm font-medium text-muted-foreground">
+          <nav className="hidden md:flex items-center gap-10">
+            <ul className="flex items-center gap-9 text-[13px] font-medium tracking-wide text-primary/70">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <a 
@@ -128,7 +128,7 @@ export default function Home() {
                 const event = e as unknown as React.MouseEvent<HTMLAnchorElement>;
                 smoothScroll(event, "contact");
               }}
-              className="bg-[#1344D3] text-white hover:bg-[#103BB8]"
+              className="bg-[#1344D3] text-white hover:bg-[#103BB8] text-[13px] font-medium tracking-wide rounded-sm px-5"
             >
               Contact Us
             </Button>
@@ -178,15 +178,10 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section id="hero" className="relative pt-40 pb-20 md:pt-56 md:pb-32 overflow-hidden flex items-center min-h-[90vh]">
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <img 
-            src="/images/hero-bg.png" 
-            alt="Abstract geometric grid" 
-            className="w-full h-full object-cover opacity-80"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background"></div>
-        </div>
+      <section id="hero" className="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden flex items-center min-h-[92vh] bg-white">
+        <div className="absolute inset-0 z-0 pointer-events-none bg-grid-faint" />
+        <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-b from-white via-white/70 to-white" />
+        <div className="absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full bg-[#1344D3]/[0.04] blur-3xl pointer-events-none" />
 
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <motion.div 
@@ -195,49 +190,50 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-4xl"
           >
-            <motion.p
-              variants={fadeUp}
-              className="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-[#1344D3] mb-6"
-            >
-              XARA CORTEX HOLDINGS INC.
-            </motion.p>
+            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-8">
+              <span className="h-px w-8 bg-[#1344D3]" />
+              <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-[#1344D3]">
+                XARA CORTEX HOLDINGS INC.
+              </p>
+            </motion.div>
 
             <motion.h1 
               variants={fadeUp}
-              className="text-5xl md:text-7xl font-bold tracking-tight text-primary leading-[1.1] mb-6"
+              className="font-display text-[44px] sm:text-[56px] md:text-[68px] font-semibold tracking-[-0.02em] text-primary leading-[1.05] mb-8"
             >
-              Building the Infrastructure <br className="hidden md:block" />Behind Intelligent Systems
+              Building the infrastructure <br className="hidden md:block" />behind intelligent systems.
             </motion.h1>
             
             <motion.p 
               variants={fadeUp}
-              className="text-xl md:text-2xl text-muted-foreground font-medium mb-4 max-w-3xl leading-relaxed"
+              className="text-lg md:text-xl text-primary/70 font-normal mb-5 max-w-3xl leading-[1.6]"
             >
               XARA CORTEX HOLDINGS INC. is a technology holding company that builds, owns, and stewards advanced platforms across AI, geospatial infrastructure, market intelligence, and digital trust.
             </motion.p>
             
             <motion.p 
               variants={fadeUp}
-              className="text-lg text-muted-foreground/80 mb-10 max-w-3xl leading-relaxed"
+              className="text-base md:text-lg text-muted-foreground mb-12 max-w-3xl leading-[1.7]"
             >
               We develop proprietary systems designed to enable trusted decisions, reliable execution, and long-term strategic value in modern digital markets.
             </motion.p>
             
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3">
               <Button 
                 size="lg" 
-                className="text-base px-8 py-6 h-auto bg-[#1344D3] text-white hover:bg-[#103BB8]"
+                className="text-[13px] tracking-wide font-medium px-7 h-12 bg-[#1344D3] text-white hover:bg-[#103BB8] rounded-sm"
                 onClick={(e) => {
                   const event = e as unknown as React.MouseEvent<HTMLAnchorElement>;
                   smoothScroll(event, "platforms");
                 }}
               >
                 Explore Platforms
+                <ArrowRight size={15} className="ml-2" />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="text-base px-8 py-6 h-auto border-primary/20 hover:bg-primary/5"
+                className="text-[13px] tracking-wide font-medium px-7 h-12 border-primary/15 text-primary hover:bg-primary/[0.03] rounded-sm"
                 onClick={(e) => {
                   const event = e as unknown as React.MouseEvent<HTMLAnchorElement>;
                   smoothScroll(event, "contact");
@@ -291,70 +287,52 @@ export default function Home() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-24 md:py-32 bg-secondary/30">
+      <section className="py-24 md:py-32 bg-[#F5F7FB] border-y border-border">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUp}
-            className="mb-16 text-center max-w-2xl mx-auto"
+            className="mb-16 max-w-2xl"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Mission & Vision</h2>
-            <div className="w-12 h-1 bg-primary mx-auto rounded-full"></div>
+            <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-[#1344D3] mb-4">Mission & Vision</p>
+            <h2 className="text-3xl md:text-[40px] font-semibold text-primary leading-[1.15]">Purpose and direction for the long term.</h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-px bg-border border border-border">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
-              variants={{
-                hidden: { opacity: 0, x: -30 },
-                visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
-              }}
+              variants={fadeUp}
+              className="bg-white p-10 md:p-12"
             >
-              <Card className="h-full border-border bg-white shadow-sm hover:shadow-md transition-shadow">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3 text-2xl">
-                    <div className="p-3 bg-primary/5 rounded-lg text-primary">
-                      <ShieldCheck size={28} />
-                    </div>
-                    Our Mission
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    To build and own world-class intelligence, geospatial, and digital infrastructure platforms that enable trusted decisions, efficient execution, and scalable innovation.
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-[11px] font-semibold tracking-[0.28em] uppercase text-[#1344D3]">01</span>
+                <span className="h-px flex-1 bg-border" />
+                <span className="text-[11px] font-medium tracking-[0.2em] uppercase text-primary/50">Mission</span>
+              </div>
+              <p className="font-display text-2xl md:text-[28px] font-medium text-primary leading-[1.35]">
+                To build and own world-class intelligence, geospatial, and digital infrastructure platforms that enable trusted decisions, efficient execution, and scalable innovation.
+              </p>
             </motion.div>
 
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
-              variants={{
-                hidden: { opacity: 0, x: 30 },
-                visible: { opacity: 1, x: 0, transition: { duration: 0.6, delay: 0.2 } }
-              }}
+              variants={fadeUp}
+              className="bg-white p-10 md:p-12"
             >
-              <Card className="h-full border-border bg-white shadow-sm hover:shadow-md transition-shadow">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3 text-2xl">
-                    <div className="p-3 bg-primary/5 rounded-lg text-primary">
-                      <Map size={28} />
-                    </div>
-                    Our Vision
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    To become a globally recognized holding company for next-generation AI, spatial intelligence, and digital trust infrastructure.
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-[11px] font-semibold tracking-[0.28em] uppercase text-[#1344D3]">02</span>
+                <span className="h-px flex-1 bg-border" />
+                <span className="text-[11px] font-medium tracking-[0.2em] uppercase text-primary/50">Vision</span>
+              </div>
+              <p className="font-display text-2xl md:text-[28px] font-medium text-primary leading-[1.35]">
+                To become a globally recognized holding company for next-generation AI, spatial intelligence, and digital trust infrastructure.
+              </p>
             </motion.div>
           </div>
         </div>
@@ -368,13 +346,13 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUp}
-            className="mb-16 md:mb-24 text-center"
+            className="mb-16 md:mb-20 max-w-2xl"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">What We Stand For</h2>
-            <div className="w-12 h-1 bg-primary mx-auto rounded-full"></div>
+            <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-[#1344D3] mb-4">Values</p>
+            <h2 className="text-3xl md:text-[40px] font-semibold text-primary leading-[1.15]">The principles guiding every platform we build.</h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {[
               {
                 title: "Intelligence",
@@ -403,17 +381,19 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
                 variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.1 } }
+                  hidden: { opacity: 0, y: 12 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.08 } }
                 }}
+                className="bg-white p-8 md:p-10 group hover:bg-[#F5F7FB] transition-colors"
               >
-                <div className="h-full group">
-                  <div className="mb-6 p-4 inline-flex bg-secondary/50 text-primary rounded-xl group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                    <value.icon size={28} strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-4">{value.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{value.desc}</p>
+                <div className="flex items-center justify-between mb-10">
+                  <span className="text-[11px] font-semibold tracking-[0.28em] uppercase text-[#1344D3]">
+                    0{i + 1}
+                  </span>
+                  <value.icon size={20} strokeWidth={1.4} className="text-primary/40 group-hover:text-[#1344D3] transition-colors" />
                 </div>
+                <h3 className="font-display text-xl font-semibold text-primary mb-3">{value.title}</h3>
+                <p className="text-[15px] text-muted-foreground leading-[1.65]">{value.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -422,14 +402,9 @@ export default function Home() {
 
       {/* Our Platforms Section */}
       <section id="platforms" className="py-24 md:py-32 relative bg-primary text-white overflow-hidden">
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
-          <img 
-            src="/images/platforms-bg.png" 
-            alt="Network background" 
-            className="w-full h-full object-cover mix-blend-overlay"
-          />
-        </div>
-        
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.07] bg-grid-faint" style={{ filter: "invert(1)" }} />
+        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[#1344D3]/20 blur-3xl pointer-events-none" />
+
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="grid lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
@@ -440,17 +415,19 @@ export default function Home() {
                 variants={fadeUp}
                 className="sticky top-32"
               >
-                <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/70 mb-4">Platforms</p>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">A Portfolio Built for the Next Infrastructure Layer</h2>
-                <div className="w-12 h-1 bg-white/30 mb-8 rounded-full"></div>
-                <p className="text-lg text-white/80 leading-relaxed mb-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="h-px w-8 bg-[#5A7EF0]" />
+                  <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-[#5A7EF0]">Platforms</p>
+                </div>
+                <h2 className="font-display text-3xl md:text-[40px] font-semibold mb-8 leading-[1.15]">A portfolio built for the next infrastructure layer.</h2>
+                <p className="text-[15px] md:text-base text-white/65 leading-[1.7]">
                   Our portfolio reflects a clear view of the future: the world will increasingly depend on systems that make decisions more intelligent, location data more reliable, markets more understandable, and trust more verifiable.
                 </p>
               </motion.div>
             </div>
             
             <div className="lg:col-span-8">
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="grid sm:grid-cols-2 gap-px bg-white/10 border border-white/10">
                 {[
                   {
                     title: "Xara Cortex",
@@ -479,27 +456,25 @@ export default function Home() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-50px" }}
                     variants={{
-                      hidden: { opacity: 0, y: 20 },
-                      visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.15 } }
+                      hidden: { opacity: 0, y: 14 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.1 } }
                     }}
+                    className="bg-primary group p-8 md:p-10 hover:bg-[#0A1228] transition-colors"
                   >
-                    <Card className="h-full bg-white/5 border-white/10 text-white backdrop-blur-sm hover:bg-white/10 transition-colors">
-                      <CardHeader>
-                        <div className="p-3 bg-white/10 inline-flex rounded-lg mb-4 text-white">
-                          <platform.icon size={24} strokeWidth={1.5} />
-                        </div>
-                        <CardTitle className="text-2xl">{platform.title}</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-white/70 leading-relaxed">
-                          {platform.desc}
-                        </p>
-                        <div className="mt-6 flex items-center text-sm font-medium text-white/90 hover:text-white transition-colors cursor-pointer group">
-                          Learn More 
-                          <ArrowRight size={16} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
-                        </div>
-                      </CardContent>
-                    </Card>
+                    <div className="flex items-center justify-between mb-12">
+                      <span className="text-[11px] font-semibold tracking-[0.28em] uppercase text-[#5A7EF0]">
+                        0{i + 1}
+                      </span>
+                      <platform.icon size={20} strokeWidth={1.3} className="text-white/40 group-hover:text-[#5A7EF0] transition-colors" />
+                    </div>
+                    <h3 className="font-display text-xl md:text-[22px] font-semibold mb-3 text-white">{platform.title}</h3>
+                    <p className="text-[14px] text-white/60 leading-[1.7] mb-8">
+                      {platform.desc}
+                    </p>
+                    <a href="#contact" onClick={(e) => smoothScroll(e, "contact")} className="inline-flex items-center text-[12px] font-medium tracking-[0.15em] uppercase text-white/80 hover:text-white transition-colors">
+                      Learn More
+                      <ArrowRight size={14} className="ml-2 transform group-hover:translate-x-0.5 transition-transform" />
+                    </a>
                   </motion.div>
                 ))}
               </div>
@@ -509,24 +484,27 @@ export default function Home() {
       </section>
 
       {/* What We Do Section */}
-      <section id="what-we-do" className="py-24 md:py-32 bg-secondary/30">
+      <section id="what-we-do" className="py-24 md:py-32 bg-white">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUp}
-            className="mb-12 text-center max-w-3xl mx-auto"
+            className="mb-16 grid md:grid-cols-12 gap-8"
           >
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#1344D3] mb-4">What We Do</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 leading-tight">Ownership, Stewardship, and Strategic Direction</h2>
-            <div className="w-12 h-1 bg-[#1344D3] mx-auto rounded-full mb-8"></div>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              As the parent company, XARA CORTEX HOLDINGS INC. provides the ownership, structure, and stewardship required to build durable platform businesses.
-            </p>
+            <div className="md:col-span-5">
+              <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-[#1344D3] mb-4">What We Do</p>
+              <h2 className="text-3xl md:text-[40px] font-semibold text-primary leading-[1.15]">Ownership, stewardship, and strategic direction.</h2>
+            </div>
+            <div className="md:col-span-7 md:pt-3">
+              <p className="text-base md:text-lg text-muted-foreground leading-[1.7]">
+                As the parent company, XARA CORTEX HOLDINGS INC. provides the ownership, structure, and stewardship required to build durable platform businesses.
+              </p>
+            </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border mt-12">
             {[
               {
                 title: "IP Ownership",
@@ -555,23 +533,19 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
                 variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.1 } }
+                  hidden: { opacity: 0, y: 12 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.08 } }
                 }}
+                className="bg-white p-8 md:p-10 group hover:bg-[#F5F7FB] transition-colors"
               >
-                <Card className="h-full border-border bg-white shadow-sm hover:shadow-md transition-shadow group">
-                  <CardHeader>
-                    <div className="p-3 bg-secondary/50 text-primary w-fit rounded-lg mb-2 group-hover:bg-primary group-hover:text-white transition-colors">
-                      <role.icon size={24} strokeWidth={1.5} />
-                    </div>
-                    <CardTitle className="text-xl">{role.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {role.desc}
-                    </p>
-                  </CardContent>
-                </Card>
+                <div className="flex items-center justify-between mb-10">
+                  <span className="text-[11px] font-semibold tracking-[0.28em] uppercase text-[#1344D3]">
+                    0{i + 1}
+                  </span>
+                  <role.icon size={20} strokeWidth={1.4} className="text-primary/40 group-hover:text-[#1344D3] transition-colors" />
+                </div>
+                <h3 className="font-display text-xl font-semibold text-primary mb-3">{role.title}</h3>
+                <p className="text-[15px] text-muted-foreground leading-[1.65]">{role.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -579,28 +553,31 @@ export default function Home() {
       </section>
 
       {/* Why It Matters Section */}
-      <section className="py-24 md:py-32 bg-white border-t border-border">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="max-w-4xl mx-auto text-center">
+      <section className="py-28 md:py-40 bg-[#0E1A33] text-white relative overflow-hidden">
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.06] bg-dots-faint" style={{ filter: "invert(1)" }} />
+        <div className="container mx-auto px-6 md:px-12 relative z-10">
+          <div className="max-w-4xl">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
             >
-              <motion.p variants={fadeUp} className="text-xs font-semibold tracking-[0.2em] uppercase text-[#1344D3] mb-4">
-                Why It Matters
-              </motion.p>
-              <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-primary mb-8 leading-tight">
-                Trusted Infrastructure Will Define the Next Era
+              <motion.div variants={fadeUp} className="flex items-center gap-3 mb-8">
+                <span className="h-px w-8 bg-[#5A7EF0]" />
+                <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-[#5A7EF0]">
+                  Why It Matters
+                </p>
+              </motion.div>
+              <motion.h2 variants={fadeUp} className="font-display text-3xl md:text-[48px] font-semibold mb-12 leading-[1.15]">
+                Trusted infrastructure will define the next era.
               </motion.h2>
-              <motion.div variants={fadeUp} className="w-12 h-1 bg-[#1344D3] mx-auto rounded-full mb-12"></motion.div>
-              
-              <div className="space-y-8 text-xl md:text-2xl font-medium text-primary/80 leading-relaxed">
-                <motion.p variants={fadeUp}>
+
+              <div className="space-y-7 max-w-3xl">
+                <motion.p variants={fadeUp} className="text-lg md:text-xl text-white/85 leading-[1.65]">
                   The future will depend on systems that make intelligence more usable, trust more verifiable, and execution more reliable. XARA CORTEX HOLDINGS INC. is building and owning the infrastructure behind that future.
                 </motion.p>
-                <motion.p variants={fadeUp} className="text-muted-foreground">
+                <motion.p variants={fadeUp} className="text-base md:text-lg text-white/55 leading-[1.7]">
                   Our work is guided by a simple belief: the most valuable businesses of the next era will not only deliver services, but provide the trusted systems on which others depend.
                 </motion.p>
               </div>
@@ -610,7 +587,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 md:py-32 bg-secondary/50">
+      <section id="contact" className="py-24 md:py-32 bg-[#F5F7FB] border-t border-border">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <motion.div
@@ -619,27 +596,23 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
             >
-              <motion.p variants={fadeUp} className="text-xs font-semibold tracking-[0.2em] uppercase text-[#1344D3] mb-4">
-                Contact
-              </motion.p>
-              <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-primary mb-6 leading-tight">
-                Let's Start the Conversation
+              <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
+                <span className="h-px w-8 bg-[#1344D3]" />
+                <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-[#1344D3]">
+                  Contact
+                </p>
+              </motion.div>
+              <motion.h2 variants={fadeUp} className="font-display text-3xl md:text-[44px] font-semibold text-primary mb-8 leading-[1.15]">
+                Let's start the conversation.
               </motion.h2>
-              <motion.div variants={fadeUp} className="w-12 h-1 bg-[#1344D3] rounded-full mb-8"></motion.div>
-              <motion.p variants={fadeUp} className="text-lg text-muted-foreground leading-relaxed mb-8">
+              <motion.p variants={fadeUp} className="text-base md:text-lg text-muted-foreground leading-[1.7] mb-10 max-w-md">
                 To learn more about XARA CORTEX HOLDINGS INC., our platforms, or strategic partnership opportunities, please get in touch.
               </motion.p>
-              
-              <motion.div variants={fadeUp} className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-white rounded-lg text-primary shadow-sm">
-                    <Building size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-primary">Headquarters</h4>
-                    <p className="text-muted-foreground">XARA CORTEX HOLDINGS INC.</p>
-                  </div>
-                </div>
+
+              <motion.div variants={fadeUp} className="border-t border-border pt-8 space-y-1">
+                <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-primary/50 mb-3">Headquarters</p>
+                <p className="font-display font-semibold text-primary text-lg">XARA CORTEX HOLDINGS INC.</p>
+                <p className="text-sm text-muted-foreground">A technology holding company.</p>
               </motion.div>
             </motion.div>
 
@@ -649,87 +622,88 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeUp}
             >
-              <Card className="border-border shadow-md">
-                <CardContent className="p-8">
-                  <form onSubmit={handleContactSubmit} className="space-y-6">
+              <div className="bg-white border border-border p-8 md:p-10">
+                <form onSubmit={handleContactSubmit} className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <Label htmlFor="fullName">Full Name</Label>
-                        <Input id="fullName" required placeholder="John Doe" className="bg-secondary/20" />
+                        <Label htmlFor="fullName" className="text-[11px] font-semibold tracking-[0.18em] uppercase text-primary/60">Full Name</Label>
+                        <Input id="fullName" required placeholder="" className="bg-white border-border rounded-sm h-11" />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email">Email Address</Label>
-                        <Input id="email" type="email" required placeholder="john@example.com" className="bg-secondary/20" />
+                        <Label htmlFor="email" className="text-[11px] font-semibold tracking-[0.18em] uppercase text-primary/60">Email Address</Label>
+                        <Input id="email" type="email" required placeholder="" className="bg-white border-border rounded-sm h-11" />
                       </div>
                     </div>
                     
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <Label htmlFor="company">Company Name</Label>
-                        <Input id="company" placeholder="Acme Corp" className="bg-secondary/20" />
+                        <Label htmlFor="company" className="text-[11px] font-semibold tracking-[0.18em] uppercase text-primary/60">Company Name</Label>
+                        <Input id="company" placeholder="" className="bg-white border-border rounded-sm h-11" />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="subject">Subject</Label>
-                        <Input id="subject" required placeholder="Partnership Inquiry" className="bg-secondary/20" />
+                        <Label htmlFor="subject" className="text-[11px] font-semibold tracking-[0.18em] uppercase text-primary/60">Subject</Label>
+                        <Input id="subject" required placeholder="" className="bg-white border-border rounded-sm h-11" />
                       </div>
                     </div>
                     
                     <div className="space-y-2">
-                      <Label htmlFor="message">Message</Label>
+                      <Label htmlFor="message" className="text-[11px] font-semibold tracking-[0.18em] uppercase text-primary/60">Message</Label>
                       <Textarea 
                         id="message" 
                         required 
-                        placeholder="How can we help you?" 
-                        className="min-h-[150px] bg-secondary/20 resize-y" 
+                        placeholder="" 
+                        className="min-h-[150px] bg-white border-border rounded-sm resize-y" 
                       />
                     </div>
                     
-                    <Button type="submit" size="lg" className="w-full text-base py-6 h-auto bg-[#1344D3] text-white hover:bg-[#103BB8]">
+                    <Button type="submit" size="lg" className="w-full text-[13px] tracking-wide font-medium py-6 h-12 bg-[#1344D3] text-white hover:bg-[#103BB8] rounded-sm">
                       Send Message
+                      <ArrowRight size={15} className="ml-2" />
                     </Button>
                   </form>
-                </CardContent>
-              </Card>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-white py-16">
+      <footer className="bg-primary text-white pt-20 pb-10">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
-            <div>
-              <div className="font-bold text-xl tracking-wider flex items-center gap-2 mb-4">
-                <div className="w-6 h-6 bg-white rounded-sm flex items-center justify-center">
-                  <div className="w-3 h-3 bg-primary rounded-sm"></div>
-                </div>
+          <div className="grid md:grid-cols-12 gap-12 mb-16">
+            <div className="md:col-span-6">
+              <div className="font-display font-semibold text-[15px] uppercase tracking-[0.14em] flex items-center gap-3 mb-5">
+                <span aria-hidden className="inline-block w-[14px] h-[14px] border-[2px] border-[#5A7EF0] bg-transparent box-border rotate-45" />
                 XARA CORTEX HOLDINGS INC.
               </div>
-              <p className="text-white/70 max-w-sm">
+              <p className="text-white/55 max-w-md leading-[1.65] text-[15px]">
                 Building the infrastructure behind intelligent systems.
               </p>
             </div>
-            
-            <div className="md:text-right">
-              <ul className="flex flex-wrap md:justify-end gap-6 text-sm font-medium text-white/80">
-                {navLinks.map((link) => (
-                  <li key={link.name}>
-                    <a 
-                      href={`#${link.target}`}
-                      onClick={(e) => smoothScroll(e, link.target)}
-                      className="hover:text-white transition-colors"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+
+            <div className="md:col-span-6 md:flex md:justify-end">
+              <div>
+                <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-white/40 mb-5">Navigate</p>
+                <ul className="grid grid-cols-2 gap-x-12 gap-y-3 text-[14px] font-medium text-white/75">
+                  {navLinks.map((link) => (
+                    <li key={link.name}>
+                      <a 
+                        href={`#${link.target}`}
+                        onClick={(e) => smoothScroll(e, link.target)}
+                        className="hover:text-white transition-colors"
+                      >
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
           
-          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
+          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[12px] text-white/45 tracking-wide">
             <p>© 2026 XARA CORTEX HOLDINGS INC. All rights reserved.</p>
+            <p className="font-medium">A technology holding company.</p>
           </div>
         </div>
       </footer>

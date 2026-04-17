@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -58,9 +58,9 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  /* Deep Navy, Slate Gray, Off-white */
-  --background: 210 20% 98%; /* #f8fafc */
-  --foreground: 222 47% 11%; /* #0f172a */
+  /* Institutional palette */
+  --background: 0 0% 100%; /* #ffffff */
+  --foreground: 220 30% 12%; /* #161D2E */
 
   --border: 214 32% 91%; /* #e2e8f0 */
   --input: 214 32% 91%;
@@ -74,7 +74,7 @@
   --popover-foreground: 222 47% 11%;
   --popover-border: 214 32% 91%;
 
-  --primary: 215 28% 17%; /* #1e293b - Deep Navy/Slate */
+  --primary: 220 50% 11%; /* #0E1A33 - Institutional Navy */
   --primary-foreground: 210 40% 98%; /* #f8fafc */
 
   --brand: 225 83% 45%; /* #1344D3 - Primary Blue */
@@ -84,7 +84,7 @@
   --secondary-foreground: 215 28% 17%;
 
   --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
+  --muted-foreground: 220 14% 38%; /* #525B6E */
 
   --accent: 210 40% 96.1%;
   --accent-foreground: 222.2 47.4% 11.2%;
@@ -92,8 +92,9 @@
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
 
-  --app-font-sans: 'Montserrat', 'Avenir Next', 'Poppins', sans-serif;
-  --radius: 0.3rem; 
+  --app-font-sans: 'Inter', 'Helvetica Neue', system-ui, sans-serif;
+  --app-font-display: 'Montserrat', 'Inter', system-ui, sans-serif;
+  --radius: 0.25rem; 
   
   --sidebar-primary-border: hsl(var(--primary));
   --sidebar-accent-border: hsl(var(--accent));
@@ -145,5 +146,27 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    font-feature-settings: "ss01", "cv11";
   }
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--app-font-display);
+    letter-spacing: -0.015em;
+  }
+}
+
+.bg-grid-faint {
+  background-image:
+    linear-gradient(to right, rgba(14, 26, 51, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 26, 51, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.bg-dots-faint {
+  background-image: radial-gradient(rgba(14, 26, 51, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.hairline-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(14, 26, 51, 0.18), transparent);
 }
