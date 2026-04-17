@@ -98,9 +98,9 @@ export default function Home() {
           <a 
             href="#hero" 
             onClick={(e) => smoothScroll(e, "hero")}
-            className="font-bold text-lg tracking-wider text-primary flex items-center gap-2"
+            className="font-bold text-lg tracking-wider text-[#1F5EFF] flex items-center gap-2"
           >
-            <div className="w-6 h-6 bg-primary rounded-sm flex items-center justify-center">
+            <div className="w-6 h-6 bg-[#1F5EFF] rounded-sm flex items-center justify-center">
               <div className="w-3 h-3 bg-white rounded-sm"></div>
             </div>
             XARA CORTEX
@@ -126,7 +126,7 @@ export default function Home() {
                 const event = e as unknown as React.MouseEvent<HTMLAnchorElement>;
                 smoothScroll(event, "contact");
               }}
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="bg-[#1F5EFF] text-white hover:bg-[#1747d6]"
             >
               Contact Us
             </Button>
@@ -167,7 +167,7 @@ export default function Home() {
                 smoothScroll(event, "contact");
                 setMobileMenuOpen(false);
               }}
-              className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+              className="w-full bg-[#1F5EFF] text-white hover:bg-[#1747d6]"
             >
               Contact Us
             </Button>
@@ -217,7 +217,7 @@ export default function Home() {
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="text-base px-8 py-6 h-auto"
+                className="text-base px-8 py-6 h-auto bg-[#1F5EFF] text-white hover:bg-[#1747d6]"
                 onClick={(e) => {
                   const event = e as unknown as React.MouseEvent<HTMLAnchorElement>;
                   smoothScroll(event, "platforms");
@@ -666,7 +666,7 @@ export default function Home() {
                       />
                     </div>
                     
-                    <Button type="submit" size="lg" className="w-full text-base py-6 h-auto">
+                    <Button type="submit" size="lg" className="w-full text-base py-6 h-auto bg-[#1F5EFF] text-white hover:bg-[#1747d6]">
                       Send Message
                     </Button>
                   </form>

@@ -64,7 +64,7 @@
 
   --border: 214 32% 91%; /* #e2e8f0 */
   --input: 214 32% 91%;
-  --ring: 215 28% 17%; /* #1e293b */
+  --ring: 223 100% 56%; /* #1F5EFF */
 
   --card: 0 0% 100%; /* #ffffff */
   --card-foreground: 222 47% 11%;
@@ -76,6 +76,9 @@
 
   --primary: 215 28% 17%; /* #1e293b - Deep Navy/Slate */
   --primary-foreground: 210 40% 98%; /* #f8fafc */
+
+  --brand: 223 100% 56%; /* #1F5EFF - Primary Blue */
+  --brand-foreground: 0 0% 100%;
 
   --secondary: 214 32% 91%; /* #e2e8f0 */
   --secondary-foreground: 215 28% 17%;
