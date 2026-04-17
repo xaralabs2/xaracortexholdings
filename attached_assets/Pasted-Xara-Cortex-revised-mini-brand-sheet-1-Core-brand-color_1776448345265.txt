@@ -1,0 +1,162 @@
+Xara Cortex — revised mini brand sheet
+1. Core brand color
+
+Primary Blue
+
+#1344D3
+
+RGB
+
+19, 68, 211
+2. Supporting palette
+
+Deep Blue
+
+#103BB8
+
+Primary Blue
+
+#1344D3
+
+Bright Accent Blue
+
+#2E5BE0
+
+Soft Highlight Blue
+
+#5A7EF0
+
+Dark Text
+
+#1B1F2A
+
+Muted Text
+
+#5B6472
+
+Light Background
+
+#F5F7FB
+
+White
+
+#FFFFFF
+3. Brand feel
+
+This version reads as:
+
+more serious
+more technical
+more controlled
+less playful
+stronger infrastructure tone
+
+It fits Xara Cortex better as an AI platform, orchestration layer, and intelligence system.
+
+4. Typography direction
+
+Best match:
+
+Montserrat SemiBold
+
+Good alternatives:
+
+Avenir Next Demi Bold
+Poppins SemiBold
+Gotham
+5. Wordmark styling
+font-family: "Montserrat", "Avenir Next", "Poppins", sans-serif;
+font-weight: 600;
+font-size: 18px;
+letter-spacing: 0.02em;
+text-transform: uppercase;
+color: #1344D3;
+6. Icon styling
+.xc-icon {
+  width: 18px;
+  height: 18px;
+  border: 4px solid #1344D3;
+  background: transparent;
+  box-sizing: border-box;
+}
+7. Horizontal logo lockup
+.xc-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.xc-wordmark {
+  font-family: "Montserrat", "Avenir Next", "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #1344D3;
+}
+8. Full CSS starter
+:root {
+  --xc-blue-dark: #103BB8;
+  --xc-blue: #1344D3;
+  --xc-blue-accent: #2E5BE0;
+  --xc-blue-light: #5A7EF0;
+  --xc-text-dark: #1B1F2A;
+  --xc-text-muted: #5B6472;
+  --xc-bg-light: #F5F7FB;
+  --xc-white: #FFFFFF;
+}
+
+.xc-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.xc-logo-icon {
+  width: 18px;
+  height: 18px;
+  border: 4px solid var(--xc-blue);
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.xc-logo-text {
+  font-family: "Montserrat", "Avenir Next", "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--xc-blue);
+}
+9. Usage guidance
+
+Best on:
+
+white
+very light gray
+dark navy backgrounds
+
+Overall look:
+
+clean
+exact
+platform-grade
+enterprise AI infrastructure
+10. Final recommended set
+
+Primary brand blue
+
+#1344D3
+
+Font
+
+Montserrat SemiBold
+
+Identity style
+
+uppercase
+geometric
+minimal
+technical
+trusted

@@ -98,11 +98,13 @@ export default function Home() {
           <a 
             href="#hero" 
             onClick={(e) => smoothScroll(e, "hero")}
-            className="font-bold text-lg tracking-wider text-[#1F5EFF] flex items-center gap-2"
+            className="font-semibold text-[18px] uppercase text-[#1344D3] flex items-center gap-2.5"
+            style={{ letterSpacing: "0.02em" }}
           >
-            <div className="w-6 h-6 bg-[#1F5EFF] rounded-sm flex items-center justify-center">
-              <div className="w-3 h-3 bg-white rounded-sm"></div>
-            </div>
+            <span
+              aria-hidden
+              className="inline-block w-[18px] h-[18px] border-[4px] border-[#1344D3] bg-transparent box-border"
+            />
             XARA CORTEX
           </a>
 
@@ -126,7 +128,7 @@ export default function Home() {
                 const event = e as unknown as React.MouseEvent<HTMLAnchorElement>;
                 smoothScroll(event, "contact");
               }}
-              className="bg-[#1F5EFF] text-white hover:bg-[#1747d6]"
+              className="bg-[#1344D3] text-white hover:bg-[#103BB8]"
             >
               Contact Us
             </Button>
@@ -167,7 +169,7 @@ export default function Home() {
                 smoothScroll(event, "contact");
                 setMobileMenuOpen(false);
               }}
-              className="w-full bg-[#1F5EFF] text-white hover:bg-[#1747d6]"
+              className="w-full bg-[#1344D3] text-white hover:bg-[#103BB8]"
             >
               Contact Us
             </Button>
@@ -217,7 +219,7 @@ export default function Home() {
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="text-base px-8 py-6 h-auto bg-[#1F5EFF] text-white hover:bg-[#1747d6]"
+                className="text-base px-8 py-6 h-auto bg-[#1344D3] text-white hover:bg-[#103BB8]"
                 onClick={(e) => {
                   const event = e as unknown as React.MouseEvent<HTMLAnchorElement>;
                   smoothScroll(event, "platforms");
@@ -666,7 +668,7 @@ export default function Home() {
                       />
                     </div>
                     
-                    <Button type="submit" size="lg" className="w-full text-base py-6 h-auto bg-[#1F5EFF] text-white hover:bg-[#1747d6]">
+                    <Button type="submit" size="lg" className="w-full text-base py-6 h-auto bg-[#1344D3] text-white hover:bg-[#103BB8]">
                       Send Message
                     </Button>
                   </form>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -64,7 +64,7 @@
 
   --border: 214 32% 91%; /* #e2e8f0 */
   --input: 214 32% 91%;
-  --ring: 223 100% 56%; /* #1F5EFF */
+  --ring: 225 83% 45%; /* #1344D3 */
 
   --card: 0 0% 100%; /* #ffffff */
   --card-foreground: 222 47% 11%;
@@ -77,7 +77,7 @@
   --primary: 215 28% 17%; /* #1e293b - Deep Navy/Slate */
   --primary-foreground: 210 40% 98%; /* #f8fafc */
 
-  --brand: 223 100% 56%; /* #1F5EFF - Primary Blue */
+  --brand: 225 83% 45%; /* #1344D3 - Primary Blue */
   --brand-foreground: 0 0% 100%;
 
   --secondary: 214 32% 91%; /* #e2e8f0 */
@@ -92,7 +92,7 @@
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
 
-  --app-font-sans: 'Plus Jakarta Sans', sans-serif;
+  --app-font-sans: 'Montserrat', 'Avenir Next', 'Poppins', sans-serif;
   --radius: 0.3rem; 
   
   --sidebar-primary-border: hsl(var(--primary));
