@@ -179,8 +179,6 @@ export default function Home() {
 
       {/* Hero Section */}
       <section id="hero" className="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden flex items-center min-h-[92vh] bg-white">
-        <div className="absolute inset-0 z-0 pointer-events-none bg-grid-faint" />
-        <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-b from-white via-white/70 to-white" />
         <div className="absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full bg-[#1344D3]/[0.04] blur-3xl pointer-events-none" />
 
         <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -402,7 +400,6 @@ export default function Home() {
 
       {/* Our Platforms Section */}
       <section id="platforms" className="py-24 md:py-32 relative bg-primary text-white overflow-hidden">
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.07] bg-grid-faint" style={{ filter: "invert(1)" }} />
         <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[#1344D3]/20 blur-3xl pointer-events-none" />
 
         <div className="container mx-auto px-6 md:px-12 relative z-10">
