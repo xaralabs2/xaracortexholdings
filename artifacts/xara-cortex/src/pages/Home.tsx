@@ -74,14 +74,47 @@ export default function Home() {
     { name: "Contact", target: "contact" }
   ];
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent",
-      description: "Thank you for reaching out. Our team will be in contact shortly.",
-      duration: 5000,
-    });
-    (e.target as HTMLFormElement).reset();
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
+    const payload = {
+      fullName: String(data.get("fullName") || ""),
+      email: String(data.get("email") || ""),
+      company: String(data.get("company") || ""),
+      subject: String(data.get("subject") || ""),
+      message: String(data.get("message") || ""),
+    };
+
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+      if (!res.ok || !result.ok) {
+        throw new Error(result.error || "Failed to send message.");
+      }
+      toast({
+        title: "Message Sent",
+        description: "Thank you for reaching out. Our team will be in contact shortly.",
+        duration: 5000,
+      });
+      form.reset();
+    } catch (err) {
+      toast({
+        title: "Unable to send",
+        description: err instanceof Error ? err.message : "Please try again later.",
+        variant: "destructive",
+        duration: 6000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -653,9 +686,9 @@ export default function Home() {
                       />
                     </div>
                     
-                    <Button type="submit" size="lg" className="w-full text-[13px] tracking-wide font-medium py-6 h-12 bg-[#1344D3] text-white hover:bg-[#103BB8] rounded-sm">
-                      Send Message
-                      <ArrowRight size={15} className="ml-2" />
+                    <Button type="submit" size="lg" disabled={isSubmitting} className="w-full text-[13px] tracking-wide font-medium py-6 h-12 bg-[#1344D3] text-white hover:bg-[#103BB8] rounded-sm disabled:opacity-70">
+                      {isSubmitting ? "Sending…" : "Send Message"}
+                      {!isSubmitting && <ArrowRight size={15} className="ml-2" />}
                     </Button>
                   </form>
               </div>
